@@ -1,31 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-     
+    <title>3D Attractive Night Mode Polls</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #111;
+            color: #eee;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            perspective: 800px;
+        }
+
+        li {
+            background-color: #292b2c;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.5s ease;
+            transform-style: preserve-3d;
+            transform-origin: center;
+        }
+
+        li:hover {
+            background-color: #418dff;
+            transform: rotateY(10deg);
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        p {
+            color: #bbb;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
+
 <body>
-    {% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %} 
-    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-
-        <!-- {#this polls is the namespace of our polls add which is add in polls/urls.py
-            he tutorial project has just one app, polls. In real Django projects, there might be 
-            five, ten, twenty apps or more. How does Django differentiate the URL names between them? 
-            For example, the polls app has a detail view, and so might an app on the same project that
-             is for a blog. How does one make it so that Django knows which app view to create for a url
-              when using the url template tag? The answer is to add namespaces to your URLconf.
-               In the polls/urls.py file, go ahead and add an app_name to set the application namespace:
-            #}
-             -->
-    {% endfor %}
-    </ul>
-    {% else %}
-    <p>No polls are available.</p>
-{% endif %}
+    <div class="container">
+        {% if latest_question_list %}
+            <ul>
+                {% for question in latest_question_list %}
+                    <li>
+                        <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+    </div>
 </body>
-</html>
 
+</html>
