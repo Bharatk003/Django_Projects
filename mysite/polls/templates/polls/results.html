@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Night Mode Poll Results</title>
+    <title>Light Mode Poll Results</title>
 
     <style>
         body {
@@ -16,30 +16,11 @@
             justify-content: center;
             height: 100vh;
             overflow: hidden;
-            background-color: #121212;
-            color: #fff;
+            background-color: #f4f4f4; /* Light background color */
+            color: #333; /* Dark text color */
         }
 
-        .moon {
-            background-image: linear-gradient(30deg, #152536, #1e2e3d);
-            width: 256px;
-            height: 256px;
-            border-radius: 50%;
-            position: relative;
-        }
-
-        .moon::before {
-            content: '';
-            background-color: #C7938B;
-            position: absolute;
-            display: block;
-            height: 100%;
-            width: 100%;
-            border-radius: 50%;
-            z-index: -1;
-            animation: cresent 3.2s linear infinite alternate;
-        }
-
+         
         @keyframes cresent {
             0% {
                 transform: translate(-30px, 30px) scale(0.9);
@@ -59,14 +40,14 @@
 
         .container {
             max-width: 600px;
-            background-color: #1f1f1f;
+            background-color: #f4f4f4; /* Light background color */
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light box shadow */
         }
 
         h1 {
-            color: #fff;
+            color: #333; /* Dark text color */
             margin-bottom: 20px;
         }
 
@@ -76,23 +57,24 @@
         }
 
         li {
-            background-color: #333;
+            background-color: #fff; /* White background */
             margin: 10px 0;
             padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light box shadow */
             transition: background-color 0.3s ease;
         }
 
         li:hover {
-            background-color: #555;
+            background-color: #f0f0f0; /* Lighter background on hover */
         }
 
         a {
-            color: #4CAF50;
+            color: #418dff;
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
+            
         }
     </style>
 </head>
