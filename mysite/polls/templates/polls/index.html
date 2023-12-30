@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,59 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choose Question</title>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'polls/style_index.css' %} ">
 
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4; /* Light background color */
-            color: #000000; /* Dark text color */
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-            perspective: 800px;
-        }
-
-        li {
-            background-color: #fff; /* White background */
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light box shadow */
-            transition: background-color 0.3s ease, transform 0.5s ease;
-            transform-style: preserve-3d;
-            transform-origin: center;
-        }
-
-        li:hover {
-            background-color: #418dff; /* Blue background on hover */
-            transform: rotateY(10deg);
-        }
-
-        a {
-            color: #333; /* Dark text color */
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        p {
-            color: #666; /* Medium text color */
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #f4f4f4; /* Light background color */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light box shadow */
-        }
-    </style>
 </head>
 
 <body>
